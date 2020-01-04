@@ -21,8 +21,8 @@ class Calculator extends Component {
     render() {
         return (
             <View style={[styles.container, globalStyle.center]}>
-							<Text>asdfas</Text>
-					  </View>
+			   <Text>Codepush works!</Text>
+		     </View>
         );
     }
 }
