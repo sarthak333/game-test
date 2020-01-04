@@ -10,6 +10,7 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
+import com.microsoft.codepush.react.CodePush;
 
 import com.reactnativenavigation.NavigationApplication;
 import com.reactnativenavigation.react.NavigationReactNativeHost;
@@ -32,6 +33,10 @@ public class MainApplication extends NavigationApplication {
     public boolean isDebug() {
         return BuildConfig.DEBUG;
     }
+    
+        protected String getJSBundleFile() {
+            return CodePush.getJSBundleFile();
+        }
 
     protected List<ReactPackage> getPackages() {
         // Add additional packages you require here
