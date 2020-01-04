@@ -5,7 +5,7 @@
 import { Navigation } from "react-native-navigation";
 import App from './App';
 import Calculator from 'screens/Calculator'
-
+import codePush from 'react-native-code-push'
 
 const codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_START };
 const MyApp = codePush(codePushOptions)(Calculator);
