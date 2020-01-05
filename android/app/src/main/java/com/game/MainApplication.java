@@ -23,12 +23,14 @@ import com.reactnativenavigation.react.ReactGateway;
 public class MainApplication extends NavigationApplication {
 
     @Override
-    protected ReactGateway createReactGateway() {
+  protected ReactGateway createReactGateway() {
         ReactNativeHost host = new NavigationReactNativeHost(this, isDebug(), createAdditionalReactPackages()) {
+            @javax.annotation.Nullable
             @Override
-            protected String getJSMainModuleName() {
-                return "index";
+            protected String getJSBundleFile() {
+                return CodePush.getJSBundleFile();
             }
+            
         };
         return new ReactGateway(this, isDebug(), host);
     }
@@ -51,7 +53,8 @@ public class MainApplication extends NavigationApplication {
             new AppCenterReactNativeCrashesPackage(MainApplication.this, getResources().getString(R.string.appCenterCrashes_whenToSendCrashes)),
             new AppCenterReactNativeAnalyticsPackage(MainApplication.this, getResources().getString(R.string.appCenterAnalytics_whenToEnableAnalytics)),
             new AppCenterReactNativePackage(MainApplication.this),
-            new CodePush("LZvl5Jazj4tLuRV2VU6IlyDfw1De_dq2NZLzNR", MainApplication.this, BuildConfig.DEBUG)
+            new CodePush("LZvl5Jazj4tLuRV2VU6IlyDfw1De_dq2NZLzNR", getApplicationContext(), isDebug())
+
         );
     }
 

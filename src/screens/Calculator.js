@@ -21,7 +21,7 @@ class Calculator extends Component {
     render() {
         return (
             <View style={[styles.container, globalStyle.center]}>
-			   <Text>adgvdkj</Text>
+			   <Text>zxcvb,m</Text>
 		     </View>
         );
     }
