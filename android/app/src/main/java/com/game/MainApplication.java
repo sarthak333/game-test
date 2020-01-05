@@ -48,7 +48,10 @@ public class MainApplication extends NavigationApplication {
         // No need to add RnnPackage and MainReactPackage
         return Arrays.<ReactPackage>asList(
             // eg. new VectorIconsPackage()
-            new CodePush("LZvl5Jazj4tLuRV2VU6IlyDfw1De_dq2NZLzNR", MainApplication.this, BuildConfig.DEBUG)
+            new AppCenterReactNativeCrashesPackage(MainApplication.this, getResources().getString(R.string.appCenterCrashes_whenToSendCrashes)),
+            new AppCenterReactNativeAnalyticsPackage(MainApplication.this, getResources().getString(R.string.appCenterAnalytics_whenToEnableAnalytics)),
+            new AppCenterReactNativePackage(MainApplication.this),
+            new CodePush("LZvl5Jazj4tLuRV2VU6IlyDfw1De_dq2NZLzNR", MainApplication.this, BuildConfig.RELEASE)
         );
     }
 
